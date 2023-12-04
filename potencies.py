@@ -1,22 +1,18 @@
 contador = 0
 
 while contador != 6:
+    entrada = input("Introdueix dos números: ")
     
-    if contador == 6:
-        break
+    a, b = map(int, entrada.split(" "))
     
-    contador += 1
-    
-    entrada = str(input())
-    
-    a, b = entrada.split(" ")
-    
-    a = int(a)
-    b = int(b)
+    if not (isinstance(a, int) and isinstance(b, int)):
+        print("Error")
+        continue
 
     resultat = 1
-    
     for _ in range(b):
         resultat *= a
 
-    print(resultat)
+    print(f"El resultat de {a}^{b} es: {resultat}")
+    
+    contador += 1
